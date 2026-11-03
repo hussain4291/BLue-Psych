@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Blue Psych</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blue.css">
+<style>
+body{padding:clamp(20px,5vw,60px) 16px 40px; text-align:center}
+.logo{font-size:clamp(3rem,10vw,6.5rem)}
+.sub{color:var(--muted); margin:22px auto 34px; font-size:1.15rem; max-width:700px}
+.years{display:grid; gap:20px; max-width:900px; margin:0 auto; grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.yr{display:block; text-decoration:none; color:var(--ink); background:var(--panel); border-radius:24px; padding:24px 18px; border-top:10px solid var(--c); box-shadow:0 8px 0 rgba(0,0,0,.35); transition:transform .15s}
+.yr:hover,.yr:focus-visible{transform:translateY(-5px)}
+.yr b{display:inline-block; font-family:"Bungee","Arial Black",sans-serif; font-weight:400; font-size:2.4rem; background:var(--c); color:#0A1A3D; border-radius:14px; padding:2px 18px}
+.yr span{display:block; color:var(--muted); margin-top:12px}
+.note{color:var(--muted); margin-top:40px}
+</style>
+</head>
+<body>
+<h1 class="logo">BLUE<br>PSYCH</h1>
+<p class="sub">Teacher: pick a year to open on the board. Everyone plays alone with a live leaderboard. Students join with the QR code.</p>
+<div class="years">
+  <a class="yr" href="host.html?y=13" style="--c:#FF5A9E"><b>Y13</b><span>13/PSY/B · 13/PSY/C</span></a>
+  <a class="yr" href="host.html?y=12" style="--c:#FFD23F"><b>Y12</b><span>12/PSY/B · 12/PSY/C</span></a>
+  <a class="yr" href="host.html?y=11" style="--c:#3FD8FF"><b>Y11</b><span>11/PSY/E · 11/PSY/C</span></a>
+  <a class="yr" href="host.html?y=10" style="--c:#4BE39A"><b>Y10</b><span>10/PSY/C</span></a>
+  <a class="yr" href="host.html?y=gk" style="--c:#C77DFF"><b>GK</b><span>General knowledge · anyone</span></a>
+</div>
+<p class="note">Students: you don't need this page. Scan the QR code on the board to join.</p>
+<script>if (/[?&]local=1/.test(location.search)) document.querySelectorAll("a.yr").forEach(a => a.href += "&local=1");</script>
+<script src="net.js"></script>
+<script src="gate.js"></script>
+</body>
+</html>
